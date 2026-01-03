@@ -1,19 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import assets from '../assets/assets.js'
 import { useForm } from "react-hook-form"
-
+import {AuthContext} from '../../context/AuthContext.jsx'
 const Login = () => {
 
   const [currentState,setCurrentState]=useState("Sign Up")
   const [isDataSubmitted,setIsDataSubmitted] = useState(false)
+  const {login}= useContext(AuthContext)
   const {register, handleSubmit,watch,formState: { errors },} = useForm()
   const onSubmit = (data) => {
     if (currentState === 'Sign Up' && !isDataSubmitted) {
       setIsDataSubmitted(true)
       return
     }
-    console.log(data);
-    reset();
+login(
+  currentState === "Sign Up" ? "signup" : "login",
+  {
+    fullName: data.fullName,
+    email: data.email,
+    password: data.password,
+    bio: data.bio
+  }
+)
   };
   return (
     <div className='min-h-screen bg-cover bg-center flex items-center justify-center gap-8 sm:justify-evenly max-sm:flex-col backdrop-blur-2xl'>
