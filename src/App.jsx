@@ -19,7 +19,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="bg-center bg-[url('./src/assets/bgImage.svg')] bg-cover bg-no-repeat ">
+    <div className="bg-center bg-[url('./bgImage.svg')] bg-cover bg-no-repeat ">
      <Toaster/>
       <Routes>
         <Route path='/' element={authUser?<Home/>:<Navigate to="/login"/>}/>
