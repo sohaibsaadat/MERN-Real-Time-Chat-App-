@@ -1,16 +1,78 @@
-# React + Vite
+# QuickChat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+QuickChat is a real-time chat application built using the MERN stack with Socket.IO. The application focuses on fast, reliable one-to-one communication with a clean user interface and practical messaging features similar to modern chat platforms.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+QuickChat allows users to create an account and instantly connect with other registered users. Once logged in, all existing users are visible, and a user can start a real-time conversation with anyone. Messaging is handled using Socket.IO to ensure instant delivery and live updates without refreshing the page.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* User signup and login system
+* Display of all registered users after account creation
+* Real-time one-to-one messaging
+* Seen and unseen message tracking
+* Unread message count badge when a chat window is not open
+* Live online and offline user status
+* Selected user chat displayed in the center chat container
+* Right sidebar showing selected user details
+* Green "online" indicator under the username when a user is active
+* Smooth and responsive UI design
+
+---
+
+## Frontend Technologies
+
+The frontend is built with React and styled using Tailwind CSS. It uses modern React libraries for routing, form handling, notifications, animations, API communication, and real-time socket connections to provide a smooth user experience.
+
+---
+
+## Backend Technologies
+
+The backend is developed with Node.js and Express, using MongoDB as the database. Authentication is handled with JWT, passwords are secured using hashing, and Socket.IO manages real-time communication. Cloud services are used for media handling, and environment variables are used for configuration and security.
+
+---
+
+## Real-Time Messaging Logic
+
+Messages are delivered instantly using Socket.IO. If a user receives a message while the chat window is closed, the message is marked as unseen and a notification count is displayed. Once the user opens the chat, the messages are marked as seen and the unread count is cleared. Online users are tracked through active socket connections and shown in real time.
+
+---
+
+## Application Flow
+
+* User registers or logs in
+* All existing users are loaded and shown in the sidebar
+* User selects another user to start chatting
+* Chat messages appear in the center container
+* Selected user information appears in the right sidebar
+* Online users are shown with a green online indicator
+* Unread messages show a count badge until the chat is opened
+
+---
+
+## Project Purpose
+
+QuickChat is built as a learning-focused MERN stack project to demonstrate real-time communication, authentication, state management, and socket-based messaging. It is suitable for portfolio presentation and practical understanding of full-stack development.
+
+---
+
+## Project Name
+
+QuickChat – MERN Stack Real-Time Chat Application
+
+---
+
+## Author
+
+Sohaib
+
+---
+
+## License
+
+This project is intended for educational and learning purposes.
